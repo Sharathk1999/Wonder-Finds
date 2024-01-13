@@ -1,0 +1,3 @@
+/* Contain all the business logic that the app
+has that is going to the server.
+ */

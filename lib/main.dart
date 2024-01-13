@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wonder_finds/constants/global_variables.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,15 +14,30 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Wonder Finds',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+       scaffoldBackgroundColor: GlobalVariables.backgroundColor,
+       colorScheme: const ColorScheme.light(
+        primary: Colors.blueGrey,
+       ),
+       appBarTheme: const AppBarTheme(
+        elevation: 0,
+        iconTheme: IconThemeData(
+          color: Colors.black,
+        ),
+       ),
+       useMaterial3: true,
+
       ),
       home:  Scaffold(
         appBar: AppBar(
           title:const Text("Wonder Finds"),
         ),
-        body:const Center(
-          child: Text("Welcome home your search matters..."),
+        body:Column(
+          children: [
+            const Center(
+              child: Text("Welcome home your search matters..."),
+            ),
+            ElevatedButton(onPressed: (){}, child: const Text("Explore",),),
+          ],
         ),
       ),
     );
