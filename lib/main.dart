@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wonder_finds/constants/global_variables.dart';
+import 'package:wonder_finds/features/auth/screens/auth_screen.dart';
+import 'package:wonder_finds/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,19 +29,8 @@ class MyApp extends StatelessWidget {
        useMaterial3: true,
 
       ),
-      home:  Scaffold(
-        appBar: AppBar(
-          title:const Text("Wonder Finds"),
-        ),
-        body:Column(
-          children: [
-            const Center(
-              child: Text("Welcome home your search matters..."),
-            ),
-            ElevatedButton(onPressed: (){}, child: const Text("Explore",),),
-          ],
-        ),
-      ),
+      onGenerateRoute: generateRoute,
+      home: const AuthScreen()
     );
   }
 }
